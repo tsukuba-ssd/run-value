@@ -18,6 +18,7 @@ csv_data.each do |data|
 
 #それぞれのデータと照合して数値を代入する
 	  out      = data["out"]
+
 		if data["一走打順"] == "0"
 			runners1 = 0
 		else
@@ -36,12 +37,10 @@ csv_data.each do |data|
 			runners3 = 1
 		end
 
-
-
 #数値に置き換えたものを順に並べる
     now = out + runners3.to_s + runners2.to_s + runners1.to_s
 
-		#puts now
+		puts now
 
 #状況が変わった場合を想定
     if now != prev
@@ -50,37 +49,40 @@ csv_data.each do |data|
     	runners.push(now)
 
 #配列situationに現在の状況を蓄積する
-        situation[now]++
+        #situation[now]++
 
 #得点がが入った場合
-    if isChangerun() then
+    if data["一走状況"] == "本進" || data["二走状況"] == "本進" || data["三走状況"] == "本進" then
 
 #何点入ったのかを確認
      runners.each do |runner|
-     runners1 = data['一走状況'] == '本進' ? '1' : '0'
-     runners2 = data['二走状況'] == '本進' ? '1' : '0'
-     runners3 = data['三走状況'] == '本進' ? '1' : '0'
+     runners1 = data["一走状況"] == "本進" ? 1 : 0
+     runners2 = data["二走状況"] == "本進" ? 1 : 0
+     runners3 = data["三走状況"] == "本進" ? 1 : 0
 
-#得点を足し合わせたいが変数ではなく文字のため並ぶだけになるのでは？
-    　rusults[runner] += data['本進']
+    　results[runner] += data["本進"]
      end
     end
 
 
 #イニングが終了した場合
-    if data['イニング継続'] == 'イニング完了' then
+    if data["イニング継続"] == "イニング完了"
 
 #配列runnersを空にする
 			 runners = []
     end
 
-#状況をリセットする
+#状況を継続する
     prev = now
 
 end
 
 puts results
 puts situation
+
+#配列の要素で同じものの数を数える
+#runners.inject(Hash.new(0)){|hash, a| hash[a] += 1; hash}
+
 
 	#puts results[0000]/situation[0000]
 end
