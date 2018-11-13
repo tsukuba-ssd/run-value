@@ -54,17 +54,19 @@ csv_data.each do |data|
 					#hash_scoreのkey0000のvalueに1足す
 					 score.store("0000", +1)
 				end
+			end
 			if data["二走状況"] == "1"
 				if pattern == "0000"
 						score.store("0000", +1)
 				end
+			end
 			if data["三走状況"] == "1"
 				if pattern == "0000"
 						score.store("0000", +1)
 				end
+			end
 			#patternをリセットする
 			pattern = []
-
 #回が継続していた場合
 		elsif
 			#nowが0000か比較する
