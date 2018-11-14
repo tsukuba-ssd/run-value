@@ -15,48 +15,45 @@ pattern.push("0000")
 #状況が変化したかどうかの判断材料にするためnow,prevとし定義する
 now = "0000"
 prev = "0000"
-
 #csvのファイルを読み込みデータを回す
 csv_data.each do |data|
-
-#それぞれのデータと照合して数値を代入する
-	  if data['out'] == '0'
+	#それぞれのデータと照合して数値を代入する
+	if data['out'] == '0'
 			out = 0
-		elsif data['out'] == '1'
+	elsif data['out'] == '1'
 			out = 1
-		elsif data['out'] == '2'
+	elsif data['out'] == '2'
 			out = 2
-		end
+	end
 
-		if data['一走状況'] == '0'
-			runners1 = 0
-		else
-			runners1 = 1
-		end
+	if data['一走状況'] == '0'
+		runners1 = 0
+	else
+		runners1 = 1
+	end
 
-		if data['二走状況'] == '0'
-			runners2 = 0
-		else
-			runners2 = 1
-		end
+	if data['二走状況'] == '0'
+		runners2 = 0
+	else
+		runners2 = 1
+	end
 
-		if data['三走状況'] == '0'
-			runners3 = 0
-		else
-			runners3 = 1
-		end
+	if data['三走状況'] == '0'
+		runners3 = 0
+	else
+		runners3 = 1
+	end
 
-#数値に置き換えたものを順に並べる
-    now = out.to_s + runners3.to_s + runners2.to_s + runners1.to_s
-
-		p now
+	#数値に置き換えたものを順に並べる
+ 	now = out.to_s + runners3.to_s + runners2.to_s + runners1.to_s
+p now
 #状況が変わった場合
 	if now != prev
 
 #得点が入った場合
-		if data["一走状況"] == "1" || data["二走状況"] == "1" || data["三走状況"] == "1"
+		if data["一走状況"] == "本進" || data["二走状況"] == "本進" || data["三走状況"] == "本進" || data["打者状況"] == "本進"
 			#一塁ランナーが得点した場合
-			if data["一走状況"] == "1"
+			if data["一走状況"] == "本進"
 				#配列patternの中に0000がある場合
 				if pattern == "0000"
 					#hash_scoreのkey0000のvalueに1足す
@@ -64,38 +61,38 @@ csv_data.each do |data|
 				end
 			end
 			#二塁ランナーが得点した場合
-			if data["二走状況"] == "1"
+			if data["二走状況"] == "本進"
 				if pattern == "0000"
 						score.store("0000", score["0000"] + 1)
 				end
 			end
 			#三塁ランナーが得点した場合
-			if data["三走状況"] == "1"
+			if data["三走状況"] == "本進"
 				if pattern == "0000"
 						score.store("0000", score["0000"] + 1)
 				end
 			end
 			#本塁打を打った時
-			if data["打者状況"] == "1"
+			if data["打者状況"] == "本進"
 				if pattern == "0000"
 						score.store("0000", score["0000"] + 1)
 				end
 			end
 			#patternをリセットする
 			pattern = []
-#回が継続していた場合 #nowが0000か比較する
-elsif now == "00000"
+	#回が継続していた場合 #nowが0000か比較する
+		elsif now == "00000"
 			#occure_hashのkey0000のvalueに1足す
 			occur.store("0000", occur["0000"] + 1)
 			#pattern配列に0000を追加する
 			pattern.push("0000")
 			#変化した状況を更新する
 			prev = now
-#回が終了していた場合
-		elsif data["イニング継続"] == "1"
+	#回が終了していた場合
+		elsif data["イニング継続"] == "イニング完了"
 			#イニングが始まるのでランナー状況を0000に戻す
-			now = '0000'
-			prev = '0000'
+			now = "0000"
+			prev = "0000"
 			pattern = []
 			#pattern配列に0000を追加する
 			pattern.push("0000")
@@ -103,6 +100,9 @@ elsif now == "00000"
 		end
 
 	end
+
 end
 
 p score
+p occur
+p pattern
