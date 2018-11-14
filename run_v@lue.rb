@@ -81,7 +81,7 @@ p now
 			#patternをリセットする
 			pattern = []
 	#回が継続していた場合 #nowが0000か比較する
-		elsif now == "00000"
+		elsif now == "0000"
 			#occure_hashのkey0000のvalueに1足す
 			occur.store("0000", occur["0000"] + 1)
 			#pattern配列に0000を追加する
