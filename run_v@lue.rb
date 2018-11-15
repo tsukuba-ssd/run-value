@@ -51,77 +51,502 @@ csv_data.each do |data|
 	if now != prev
 
 #得点が入った場合
-		if data["一走状況"] == "本進" || data["二走状況"] == "本進" || data["三走状況"] == "本進" || data["打者状況"] == "本進"
 			#一塁ランナーが得点した場合
 			if data["一走状況"] == "本進"
 				#配列patternの中に0000がある場合
-				if pattern == "0000"
+				if pattern.select { |n| n == "0000"}
 					#hash_scoreのkey0000のvalueに1足す
 					 score.store("0000", score["0000"] + 1)
 				end
+				#配列patternの中に1000がある場合
+				if pattern.select { |n| n == "1000"}
+					#hash_scoreのkey1000のvalueに1足す
+					 score.store("1000", score["1000"] + 1)
+				end
+				#配列patternの中に2000がある場合
+				if pattern.select { |n| n == "2000"}
+					#hash_scoreのkey2000のvalueに1足す
+					 score.store("2000", score["2000"] + 1)
+				end
 				#配列patternの中に0001がある場合
-				if pattern == "0001"
+				if pattern.select { |n| n == "0001"}
 					#hash_scoreのkey0000のvalueに1足す
 					 score.store("0001", score["0001"] + 1)
 				end
+				#配列patternの中に1001がある場合
+				if pattern.select { |n| n == "1001"}
+					#hash_scoreのkey1001のvalueに1足す
+					 score.store("1001", score["1001"] + 1)
+				end
+				#配列patternの中に2001がある場合
+				if pattern.select { |n| n == "2001"}
+					#hash_scoreのkey2001のvalueに1足す
+					 score.store("2001", score["2001"] + 1)
+				end
 				#配列patternの中に0010がある場合
-				if pattern == "0010"
+				if pattern.select { |n| n == "0010"}
 					#hash_scoreのkey0010のvalueに1足す
 					 score.store("0010", score["0010"] + 1)
+				end
+				#配列patternの中に1010がある場合
+				if pattern.select { |n| n == "1010"}
+					#hash_scoreのkey1010のvalueに1足す
+					 score.store("1010", score["1010"] + 1)
+				end
+				#配列patternの中に2010がある場合
+				if pattern.select { |n| n == "2010"}
+					#hash_scoreのkey2010のvalueに1足す
+					 score.store("2010", score["2010"] + 1)
+				end
+				#配列patternの中に0100がある場合
+				if pattern.select { |n| n == "0100"}
+					#hash_scoreのkey0100のvalueに1足す
+					 score.store("0100", score["0100"] + 1)
+				end
+				#配列patternの中に1100がある場合
+				if pattern.select { |n| n == "1100"}
+					#hash_scoreのkey1100のvalueに1足す
+					 score.store("1100", score["1100"] + 1)
+				end
+				#配列patternの中に2100がある場合
+				if pattern.select { |n| n == "2100"}
+					#hash_scoreのkey2100のvalueに1足す
+					 score.store("2100", score["2100"] + 1)
+				end
+				#配列patternの中に0011がある場合
+				if pattern.select { |n| n == "0011"}
+					#hash_scoreのkey0011のvalueに1足す
+					 score.store("0011", score["0011"] + 1)
+				end
+				#配列patternの中に1011がある場合
+				if pattern.select { |n| n == "1011"}
+					#hash_scoreのkey1011のvalueに1足す
+					 score.store("1011", score["1011"] + 1)
+				end
+				#配列patternの中に2011がある場合
+				if pattern.select { |n| n == "2011"}
+					#hash_scoreのkey2011のvalueに1足す
+					 score.store("2011", score["2011"] + 1)
+				end
+				#配列patternの中に0110がある場合
+				if pattern.select { |n| n == "0110"}
+					#hash_scoreのkey0110のvalueに1足す
+					 score.store("0110", score["0110"] + 1)
+				end
+				#配列patternの中に1110がある場合
+				if pattern.select { |n| n == "1110"}
+					#hash_scoreのkey1110のvalueに1足す
+					 score.store("1110", score["1110"] + 1)
+				end
+				#配列patternの中に2110がある場合
+				if pattern.select { |n| n == "2110"}
+					#hash_scoreのkey2110のvalueに1足す
+					 score.store("2110", score["2110"] + 1)
+				end
+				#配列patternの中に0101がある場合
+				if pattern.select { |n| n == "0101"}
+					#hash_scoreのkey0101のvalueに1足す
+					 score.store("0101", score["0101"] + 1)
+				end
+				#配列patternの中に1101がある場合
+				if pattern.select { |n| n == "1101"}
+					#hash_scoreのkey1101のvalueに1足す
+					 score.store("1101", score["1101"] + 1)
+				end
+				#配列patternの中に2101がある場合
+				if pattern.select { |n| n == "2101"}
+					#hash_scoreのkey2101のvalueに1足す
+					 score.store("2101", score["2101"] + 1)
+				end
+				#配列patternの中に0111がある場合
+				if pattern.select { |n| n == "0111"}
+					#hash_scoreのkey0111のvalueに1足す
+					 score.store("0111", score["0111"] + 1)
+				end
+				#配列patternの中に1111がある場合
+				if pattern.select { |n| n == "1111"}
+					#hash_scoreのkey1111のvalueに1足す
+					 score.store("1111", score["1111"] + 1)
+				end
+				#配列patternの中に2111がある場合
+				if pattern.select { |n| n == "2111"}
+					#hash_scoreのkey2111のvalueに1足す
+					 score.store("2111", score["2111"] + 1)
 				end
 			end
 			#二塁ランナーが得点した場合
 			if data["二走状況"] == "本進"
-				if pattern == "0000"
-						score.store("0000", score["0000"] + 1)
+				#配列patternの中に0000がある場合
+				if pattern.select { |n| n == "0000"}
+					#hash_scoreのkey0000のvalueに1足す
+					 score.store("0000", score["0000"] + 1)
+				end
+				#配列patternの中に1000がある場合
+				if pattern.select { |n| n == "1000"}
+					#hash_scoreのkey1000のvalueに1足す
+					 score.store("1000", score["1000"] + 1)
+				end
+				#配列patternの中に2000がある場合
+				if pattern.select { |n| n == "2000"}
+					#hash_scoreのkey2000のvalueに1足す
+					 score.store("2000", score["2000"] + 1)
 				end
 				#配列patternの中に0001がある場合
-				if pattern == "0001"
-					#hash_scoreのkey0001のvalueに1足す
+				if pattern.select { |n| n == "0001"}
+					#hash_scoreのkey0000のvalueに1足す
 					 score.store("0001", score["0001"] + 1)
 				end
+				#配列patternの中に1001がある場合
+				if pattern.select { |n| n == "1001"}
+					#hash_scoreのkey1001のvalueに1足す
+					 score.store("1001", score["1001"] + 1)
+				end
+				#配列patternの中に2001がある場合
+				if pattern.select { |n| n == "2001"}
+					#hash_scoreのkey2001のvalueに1足す
+					 score.store("2001", score["2001"] + 1)
+				end
 				#配列patternの中に0010がある場合
-				if pattern == "0010"
+				if pattern.select { |n| n == "0010"}
 					#hash_scoreのkey0010のvalueに1足す
 					 score.store("0010", score["0010"] + 1)
+				end
+				#配列patternの中に1010がある場合
+				if pattern.select { |n| n == "1010"}
+					#hash_scoreのkey1010のvalueに1足す
+					 score.store("1010", score["1010"] + 1)
+				end
+				#配列patternの中に2010がある場合
+				if pattern.select { |n| n == "2010"}
+					#hash_scoreのkey2010のvalueに1足す
+					 score.store("2010", score["2010"] + 1)
+				end
+				#配列patternの中に0100がある場合
+				if pattern.select { |n| n == "0100"}
+					#hash_scoreのkey0100のvalueに1足す
+					 score.store("0100", score["0100"] + 1)
+				end
+				#配列patternの中に1100がある場合
+				if pattern.select { |n| n == "1100"}
+					#hash_scoreのkey1100のvalueに1足す
+					 score.store("1100", score["1100"] + 1)
+				end
+				#配列patternの中に2100がある場合
+				if pattern.select { |n| n == "2100"}
+					#hash_scoreのkey2100のvalueに1足す
+					 score.store("2100", score["2100"] + 1)
+				end
+				#配列patternの中に0011がある場合
+				if pattern.select { |n| n == "0011"}
+					#hash_scoreのkey0011のvalueに1足す
+					 score.store("0011", score["0011"] + 1)
+				end
+				#配列patternの中に1011がある場合
+				if pattern.select { |n| n == "1011"}
+					#hash_scoreのkey1011のvalueに1足す
+					 score.store("1011", score["1011"] + 1)
+				end
+				#配列patternの中に2011がある場合
+				if pattern.select { |n| n == "2011"}
+					#hash_scoreのkey2011のvalueに1足す
+					 score.store("2011", score["2011"] + 1)
+				end
+				#配列patternの中に0110がある場合
+				if pattern.select { |n| n == "0110"}
+					#hash_scoreのkey0110のvalueに1足す
+					 score.store("0110", score["0110"] + 1)
+				end
+				#配列patternの中に1110がある場合
+				if pattern.select { |n| n == "1110"}
+					#hash_scoreのkey1110のvalueに1足す
+					 score.store("1110", score["1110"] + 1)
+				end
+				#配列patternの中に2110がある場合
+				if pattern.select { |n| n == "2110"}
+					#hash_scoreのkey2110のvalueに1足す
+					 score.store("2110", score["2110"] + 1)
+				end
+				#配列patternの中に0101がある場合
+				if pattern.select { |n| n == "0101"}
+					#hash_scoreのkey0101のvalueに1足す
+					 score.store("0101", score["0101"] + 1)
+				end
+				#配列patternの中に1101がある場合
+				if pattern.select { |n| n == "1101"}
+					#hash_scoreのkey1101のvalueに1足す
+					 score.store("1101", score["1101"] + 1)
+				end
+				#配列patternの中に2101がある場合
+				if pattern.select { |n| n == "2101"}
+					#hash_scoreのkey2101のvalueに1足す
+					 score.store("2101", score["2101"] + 1)
+				end
+				#配列patternの中に0111がある場合
+				if pattern.select { |n| n == "0111"}
+					#hash_scoreのkey0111のvalueに1足す
+					 score.store("0111", score["0111"] + 1)
+				end
+				#配列patternの中に1111がある場合
+				if pattern.select { |n| n == "1111"}
+					#hash_scoreのkey1111のvalueに1足す
+					 score.store("1111", score["1111"] + 1)
+				end
+				#配列patternの中に2111がある場合
+				if pattern.select { |n| n == "2111"}
+					#hash_scoreのkey2111のvalueに1足す
+					 score.store("2111", score["2111"] + 1)
 				end
 			end
 			#三塁ランナーが得点した場合
 			if data["三走状況"] == "本進"
-				if pattern == "0000"
-						score.store("0000", score["0000"] + 1)
+				#配列patternの中に0000がある場合
+				if pattern.select { |n| n == "0000"}
+					#hash_scoreのkey0000のvalueに1足す
+					 score.store("0000", score["0000"] + 1)
+				end
+				#配列patternの中に1000がある場合
+				if pattern.select { |n| n == "1000"}
+					#hash_scoreのkey1000のvalueに1足す
+					 score.store("1000", score["1000"] + 1)
+				end
+				#配列patternの中に2000がある場合
+				if pattern.select { |n| n == "2000"}
+					#hash_scoreのkey2000のvalueに1足す
+					 score.store("2000", score["2000"] + 1)
 				end
 				#配列patternの中に0001がある場合
-				if pattern == "0001"
-					#hash_scoreのkey0001のvalueに1足す
+				if pattern.select { |n| n == "0001"}
+					#hash_scoreのkey0000のvalueに1足す
 					 score.store("0001", score["0001"] + 1)
 				end
+				#配列patternの中に1001がある場合
+				if pattern.select { |n| n == "1001"}
+					#hash_scoreのkey1001のvalueに1足す
+					 score.store("1001", score["1001"] + 1)
+				end
+				#配列patternの中に2001がある場合
+				if pattern.select { |n| n == "2001"}
+					#hash_scoreのkey2001のvalueに1足す
+					 score.store("2001", score["2001"] + 1)
+				end
 				#配列patternの中に0010がある場合
-				if pattern == "0010"
+				if pattern.select { |n| n == "0010"}
 					#hash_scoreのkey0010のvalueに1足す
 					 score.store("0010", score["0010"] + 1)
+				end
+				#配列patternの中に1010がある場合
+				if pattern.select { |n| n == "1010"}
+					#hash_scoreのkey1010のvalueに1足す
+					 score.store("1010", score["1010"] + 1)
+				end
+				#配列patternの中に2010がある場合
+				if pattern.select { |n| n == "2010"}
+					#hash_scoreのkey2010のvalueに1足す
+					 score.store("2010", score["2010"] + 1)
+				end
+				#配列patternの中に0100がある場合
+				if pattern.select { |n| n == "0100"}
+					#hash_scoreのkey0100のvalueに1足す
+					 score.store("0100", score["0100"] + 1)
+				end
+				#配列patternの中に1100がある場合
+				if pattern.select { |n| n == "1100"}
+					#hash_scoreのkey1100のvalueに1足す
+					 score.store("1100", score["1100"] + 1)
+				end
+				#配列patternの中に2100がある場合
+				if pattern.select { |n| n == "2100"}
+					#hash_scoreのkey2100のvalueに1足す
+					 score.store("2100", score["2100"] + 1)
+				end
+				#配列patternの中に0011がある場合
+				if pattern.select { |n| n == "0011"}
+					#hash_scoreのkey0011のvalueに1足す
+					 score.store("0011", score["0011"] + 1)
+				end
+				#配列patternの中に1011がある場合
+				if pattern.select { |n| n == "1011"}
+					#hash_scoreのkey1011のvalueに1足す
+					 score.store("1011", score["1011"] + 1)
+				end
+				#配列patternの中に2011がある場合
+				if pattern.select { |n| n == "2011"}
+					#hash_scoreのkey2011のvalueに1足す
+					 score.store("2011", score["2011"] + 1)
+				end
+				#配列patternの中に0110がある場合
+				if pattern.select { |n| n == "0110"}
+					#hash_scoreのkey0110のvalueに1足す
+					 score.store("0110", score["0110"] + 1)
+				end
+				#配列patternの中に1110がある場合
+				if pattern.select { |n| n == "1110"}
+					#hash_scoreのkey1110のvalueに1足す
+					 score.store("1110", score["1110"] + 1)
+				end
+				#配列patternの中に2110がある場合
+				if pattern.select { |n| n == "2110"}
+					#hash_scoreのkey2110のvalueに1足す
+					 score.store("2110", score["2110"] + 1)
+				end
+				#配列patternの中に0101がある場合
+				if pattern.select { |n| n == "0101"}
+					#hash_scoreのkey0101のvalueに1足す
+					 score.store("0101", score["0101"] + 1)
+				end
+				#配列patternの中に1101がある場合
+				if pattern.select { |n| n == "1101"}
+					#hash_scoreのkey1101のvalueに1足す
+					 score.store("1101", score["1101"] + 1)
+				end
+				#配列patternの中に2101がある場合
+				if pattern.select { |n| n == "2101"}
+					#hash_scoreのkey2101のvalueに1足す
+					 score.store("2101", score["2101"] + 1)
+				end
+				#配列patternの中に0111がある場合
+				if pattern.select { |n| n == "0111"}
+					#hash_scoreのkey0111のvalueに1足す
+					 score.store("0111", score["0111"] + 1)
+				end
+				#配列patternの中に1111がある場合
+				if pattern.select { |n| n == "1111"}
+					#hash_scoreのkey1111のvalueに1足す
+					 score.store("1111", score["1111"] + 1)
+				end
+				#配列patternの中に2111がある場合
+				if pattern.select { |n| n == "2111"}
+					#hash_scoreのkey2111のvalueに1足す
+					 score.store("2111", score["2111"] + 1)
 				end
 			end
 			#本塁打を打った時
 			if data["打者状況"] == "本進"
-				if pattern == "0000"
-						score.store("0000", score["0000"] + 1)
+				#配列patternの中に0000がある場合
+				if pattern.select { |n| n == "0000"}
+					#hash_scoreのkey0000のvalueに1足す
+					 score.store("0000", score["0000"] + 1)
+				end
+				#配列patternの中に1000がある場合
+				if pattern.select { |n| n == "1000"}
+					#hash_scoreのkey1000のvalueに1足す
+					 score.store("1000", score["1000"] + 1)
+				end
+				#配列patternの中に2000がある場合
+				if pattern.select { |n| n == "2000"}
+					#hash_scoreのkey2000のvalueに1足す
+					 score.store("2000", score["2000"] + 1)
 				end
 				#配列patternの中に0001がある場合
-				if pattern == "0001"
-					#hash_scoreのkey0001のvalueに1足す
+				if pattern.select { |n| n == "0001"}
+					#hash_scoreのkey0000のvalueに1足す
 					 score.store("0001", score["0001"] + 1)
 				end
+				#配列patternの中に1001がある場合
+				if pattern.select { |n| n == "1001"}
+					#hash_scoreのkey1001のvalueに1足す
+					 score.store("1001", score["1001"] + 1)
+				end
+				#配列patternの中に2001がある場合
+				if pattern.select { |n| n == "2001"}
+					#hash_scoreのkey2001のvalueに1足す
+					 score.store("2001", score["2001"] + 1)
+				end
 				#配列patternの中に0010がある場合
-				if pattern == "0010"
+				if pattern.select { |n| n == "0010"}
 					#hash_scoreのkey0010のvalueに1足す
 					 score.store("0010", score["0010"] + 1)
+				end
+				#配列patternの中に1010がある場合
+				if pattern.select { |n| n == "1010"}
+					#hash_scoreのkey1010のvalueに1足す
+					 score.store("1010", score["1010"] + 1)
+				end
+				#配列patternの中に2010がある場合
+				if pattern.select { |n| n == "2010"}
+					#hash_scoreのkey2010のvalueに1足す
+					 score.store("2010", score["2010"] + 1)
+				end
+				#配列patternの中に0100がある場合
+				if pattern.select { |n| n == "0100"}
+					#hash_scoreのkey0100のvalueに1足す
+					 score.store("0100", score["0100"] + 1)
+				end
+				#配列patternの中に1100がある場合
+				if pattern.select { |n| n == "1100"}
+					#hash_scoreのkey1100のvalueに1足す
+					 score.store("1100", score["1100"] + 1)
+				end
+				#配列patternの中に2100がある場合
+				if pattern.select { |n| n == "2100"}
+					#hash_scoreのkey2100のvalueに1足す
+					 score.store("2100", score["2100"] + 1)
+				end
+				#配列patternの中に0011がある場合
+				if pattern.select { |n| n == "0011"}
+					#hash_scoreのkey0011のvalueに1足す
+					 score.store("0011", score["0011"] + 1)
+				end
+				#配列patternの中に1011がある場合
+				if pattern.select { |n| n == "1011"}
+					#hash_scoreのkey1011のvalueに1足す
+					 score.store("1011", score["1011"] + 1)
+				end
+				#配列patternの中に2011がある場合
+				if pattern.select { |n| n == "2011"}
+					#hash_scoreのkey2011のvalueに1足す
+					 score.store("2011", score["2011"] + 1)
+				end
+				#配列patternの中に0110がある場合
+				if pattern.select { |n| n == "0110"}
+					#hash_scoreのkey0110のvalueに1足す
+					 score.store("0110", score["0110"] + 1)
+				end
+				#配列patternの中に1110がある場合
+				if pattern.select { |n| n == "1110"}
+					#hash_scoreのkey1110のvalueに1足す
+					 score.store("1110", score["1110"] + 1)
+				end
+				#配列patternの中に2110がある場合
+				if pattern.select { |n| n == "2110"}
+					#hash_scoreのkey2110のvalueに1足す
+					 score.store("2110", score["2110"] + 1)
+				end
+				#配列patternの中に0101がある場合
+				if pattern.select { |n| n == "0101"}
+					#hash_scoreのkey0101のvalueに1足す
+					 score.store("0101", score["0101"] + 1)
+				end
+				#配列patternの中に1101がある場合
+				if pattern.select { |n| n == "1101"}
+					#hash_scoreのkey1101のvalueに1足す
+					 score.store("1101", score["1101"] + 1)
+				end
+				#配列patternの中に2101がある場合
+				if pattern.select { |n| n == "2101"}
+					#hash_scoreのkey2101のvalueに1足す
+					 score.store("2101", score["2101"] + 1)
+				end
+				#配列patternの中に0111がある場合
+				if pattern.select { |n| n == "0111"}
+					#hash_scoreのkey0111のvalueに1足す
+					 score.store("0111", score["0111"] + 1)
+				end
+				#配列patternの中に1111がある場合
+				if pattern.select { |n| n == "1111"}
+					#hash_scoreのkey1111のvalueに1足す
+					 score.store("1111", score["1111"] + 1)
+				end
+				#配列patternの中に2111がある場合
+				if pattern.select { |n| n == "2111"}
+					#hash_scoreのkey2111のvalueに1足す
+					 score.store("2111", score["2111"] + 1)
 				end
 			end
 			#patternをリセットする
 			pattern = []
 	#回が継続していた場合 #nowが0000か比較する
-		elsif now == "0000"
+		if now == "0000"
 			#イニングが始まるのでランナー状況を0000に戻す
 	 		now = "0000"
 	 		prev = "0000"
