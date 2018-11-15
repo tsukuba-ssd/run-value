@@ -44,7 +44,7 @@ csv_data.each do |data|
 		runners3 = 1
 	end
 
-	#数値に置き換えたものを順に並べる
+	#数値に置き換えたものを文字列として順に並べる
  	now = out.to_s + runners3.to_s + runners2.to_s + runners1.to_s
 
 #状況が変わった場合
@@ -542,9 +542,9 @@ csv_data.each do |data|
 					#hash_scoreのkey2111のvalueに1足す
 					 score.store("2111", score["2111"] + 1)
 				end
+				#patternをリセットする
+				pattern = []
 			end
-			#patternをリセットする
-			pattern = []
 	#回が継続していた場合 #nowが0000か比較する
 		if now == "0000"
 			#イニングが始まるのでランナー状況を0000に戻す
@@ -746,5 +746,3 @@ csv_data.each do |data|
 end
 
 p score
-p occur
-p pattern
