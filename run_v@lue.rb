@@ -96,7 +96,8 @@ p now
 			pattern = []
 			#pattern配列に0000を追加する
 			pattern.push("0000")
-
+		else
+			p "out"
 		end
 
 	end
