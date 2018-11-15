@@ -46,7 +46,7 @@ csv_data.each do |data|
 
 	#数値に置き換えたものを順に並べる
  	now = out.to_s + runners3.to_s + runners2.to_s + runners1.to_s
-p now
+
 #状況が変わった場合
 	if now != prev
 
@@ -59,11 +59,31 @@ p now
 					#hash_scoreのkey0000のvalueに1足す
 					 score.store("0000", score["0000"] + 1)
 				end
+				#配列patternの中に0001がある場合
+				if pattern == "0001"
+					#hash_scoreのkey0000のvalueに1足す
+					 score.store("0001", score["0001"] + 1)
+				end
+				#配列patternの中に0010がある場合
+				if pattern == "0010"
+					#hash_scoreのkey0010のvalueに1足す
+					 score.store("0010", score["0010"] + 1)
+				end
 			end
 			#二塁ランナーが得点した場合
 			if data["二走状況"] == "本進"
 				if pattern == "0000"
 						score.store("0000", score["0000"] + 1)
+				end
+				#配列patternの中に0001がある場合
+				if pattern == "0001"
+					#hash_scoreのkey0001のvalueに1足す
+					 score.store("0001", score["0001"] + 1)
+				end
+				#配列patternの中に0010がある場合
+				if pattern == "0010"
+					#hash_scoreのkey0010のvalueに1足す
+					 score.store("0010", score["0010"] + 1)
 				end
 			end
 			#三塁ランナーが得点した場合
@@ -71,33 +91,229 @@ p now
 				if pattern == "0000"
 						score.store("0000", score["0000"] + 1)
 				end
+				#配列patternの中に0001がある場合
+				if pattern == "0001"
+					#hash_scoreのkey0001のvalueに1足す
+					 score.store("0001", score["0001"] + 1)
+				end
+				#配列patternの中に0010がある場合
+				if pattern == "0010"
+					#hash_scoreのkey0010のvalueに1足す
+					 score.store("0010", score["0010"] + 1)
+				end
 			end
 			#本塁打を打った時
 			if data["打者状況"] == "本進"
 				if pattern == "0000"
 						score.store("0000", score["0000"] + 1)
 				end
+				#配列patternの中に0001がある場合
+				if pattern == "0001"
+					#hash_scoreのkey0001のvalueに1足す
+					 score.store("0001", score["0001"] + 1)
+				end
+				#配列patternの中に0010がある場合
+				if pattern == "0010"
+					#hash_scoreのkey0010のvalueに1足す
+					 score.store("0010", score["0010"] + 1)
+				end
 			end
 			#patternをリセットする
 			pattern = []
 	#回が継続していた場合 #nowが0000か比較する
 		elsif now == "0000"
-			#occure_hashのkey0000のvalueに1足す
-			occur.store("0000", occur["0000"] + 1)
-			#pattern配列に0000を追加する
-			pattern.push("0000")
+			#イニングが始まるのでランナー状況を0000に戻す
+	 		now = "0000"
+	 		prev = "0000"
+	 		pattern = []
+	 		#occure_hashのkey0000のvalueに1足す
+	 		occur.store("0000", occur["0000"] + 1)
+	 		#pattern配列に0000を追加する
+	 		pattern.push("0000")
+	 #回が継続していた場合 #nowが1000か比較する
+	 	elsif now == "1000"
+	 		#occure_hashのkey1000のvalueに1足す
+	 		occur.store("1000", occur["1000"] + 1)
+	 		#pattern配列に0001を追加する
+	 		pattern.push("1000")
+	 		#変化した状況を更新する
+	 		prev = now
+	 #回が継続していた場合 #nowが2000か比較する
+	 	elsif now == "2000"
+	 		#occure_hashのkey2000のvalueに1足す
+	 		occur.store("2000", occur["2000"] + 1)
+	 		#pattern配列に2000を追加する
+	 		pattern.push("2000")
+	 		#変化した状況を更新する
+	 		prev = now
+	 #回が継続していた場合 #nowが0001か比較する
+	 	elsif now == "0001"
+	 		#occure_hashのkey0001のvalueに1足す
+	 		occur.store("0001", occur["0001"] + 1)
+	 		#pattern配列に0001を追加する
+	 		pattern.push("0001")
+	 		#変化した状況を更新する
+	 		prev = now
+	 #回が継続していた場合 #nowが1001か比較する
+	 	elsif now == "1001"
+	 		#occure_hashのkey1001のvalueに1足す
+	 		occur.store("1001", occur["1001"] + 1)
+	 		#pattern配列に1001を追加する
+	 		pattern.push("1001")
+	 		#変化した状況を更新する
+	 		prev = now
+	 #回が継続していた場合 #nowが2001か比較する
+	 	elsif now == "2001"
+	 		#occure_hashのkey2001のvalueに1足す
+	 		occur.store("2001", occur["2001"] + 1)
+	 		#pattern配列に2001を追加する
+	 		pattern.push("2001")
+	 		#変化した状況を更新する
+	 		prev = now
+	 #回が継続していた場合 #nowが0010か比較する
+	 	elsif now == "0010"
+	 		#occure_hashのkey0010のvalueに1足す
+	 		occur.store("0010", occur["0010"] + 1)
+	 		#pattern配列に0010を追加する
+	 		pattern.push("0010")
+	 		#変化した状況を更新する
+	 		prev = now
+	 #回が継続していた場合 #nowが1010か比較する
+	 	elsif now == "1010"
+	 		#occure_hashのkey1010のvalueに1足す
+	 		occur.store("1010", occur["1010"] + 1)
+	 		#pattern配列に1010を追加する
+	 		pattern.push("1010")
+	 		#変化した状況を更新する
+ 			prev = now
+	 #回が継続していた場合 #nowが2010か比較する
+	 	elsif now == "2010"
+	 		#occure_hashのkey2010のvalueに1足す
+	 		occur.store("2010", occur["2010"] + 1)
+	 		#pattern配列に2010を追加する
+	 		pattern.push("2010")
+	 		#変化した状況を更新する
+	 		prev = now
+	 #回が継続していた場合 #nowが0100か比較する
+	 	elsif now == "0100"
+	 		#occure_hashのkey0100のvalueに1足す
+	 		occur.store("0100", occur["0100"] + 1)
+	 		#pattern配列に0100を追加する
+	 		pattern.push("0100")
+	 		#変化した状況を更新する
+	 		prev = now
+	 #回が継続していた場合 #nowが1100か比較する
+	 	elsif now == "1100"
+	 		#occure_hashのkey1100のvalueに1足す
+	 		occur.store("1100", occur["1100"] + 1)
+	 		#pattern配列に1100を追加する
+	 		pattern.push("1100")
+	 		#変化した状況を更新する
+	 		prev = now
+	#回が継続していた場合 #nowが2100か比較する
+		elsif now == "2100"
+			#occure_hashのkey2100のvalueに1足す
+	 		occur.store("2100", occur["2100"] + 1)
+	 		#pattern配列に2100を追加する
+	 		pattern.push("2100")
+	 		#変化した状況を更新する
+	 		prev = now
+	#回が継続していた場合 #nowが0011か比較する
+		elsif now == "0011"
+			#occure_hashのkey0011のvalueに1足す
+			occur.store("0011", occur["0011"] + 1)
+			#pattern配列に0011を追加する
+			pattern.push("0011")
 			#変化した状況を更新する
 			prev = now
-	#回が終了していた場合
-		elsif data["イニング継続"] == "イニング完了"
-			#イニングが始まるのでランナー状況を0000に戻す
-			now = "0000"
-			prev = "0000"
-			pattern = []
-			#pattern配列に0000を追加する
-			pattern.push("0000")
-		else
-			p "out"
+			#回が継続していた場合 #nowが1011か比較する
+		elsif now == "1011"
+			#occure_hashのkey1011のvalueに1足す
+			occur.store("1011", occur["1011"] + 1)
+			#pattern配列に1011を追加する
+			pattern.push("1011")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが2011か比較する
+		elsif now == "2011"
+			#occure_hashのkey2011のvalueに1足す
+			occur.store("2011", occur["2011"] + 1)
+			#pattern配列に2011を追加する
+			pattern.push("2011")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが0110か比較する
+		elsif now == "0110"
+			#occure_hashのkey0110のvalueに1足す
+			occur.store("0110", occur["0110"] + 1)
+			#pattern配列に0110を追加する
+			pattern.push("0110")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが1110か比較する
+		elsif now == "1110"
+			#occure_hashのkey1110のvalueに1足す
+			occur.store("1110", occur["1110"] + 1)
+			#pattern配列に1110を追加する
+			pattern.push("1110")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが2110か比較する
+		elsif now == "2110"
+			#occure_hashのkey2110のvalueに1足す
+			occur.store("2110", occur["2110"] + 1)
+			#pattern配列に2110を追加する
+			pattern.push("2110")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが0101か比較する
+		elsif now == "0101"
+			#occure_hashのkey0101のvalueに1足す
+			occur.store("0101", occur["0101"] + 1)
+			#pattern配列に0101を追加する
+			pattern.push("0101")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが1101か比較する
+		elsif now == "1101"
+			#occure_hashのkey1101のvalueに1足す
+			occur.store("1101", occur["1101"] + 1)
+			#pattern配列に1101を追加する
+			pattern.push("1101")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが2101か比較する
+		elsif now == "2101"
+			#occure_hashのkey2101のvalueに1足す
+			occur.store("2101", occur["2101"] + 1)
+			#pattern配列に2101を追加する
+			pattern.push("2101")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが0111か比較する
+		elsif now == "0111"
+			#occure_hashのkey0111のvalueに1足す
+			occur.store("0111", occur["0111"] + 1)
+			#pattern配列に0111を追加する
+			pattern.push("0111")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが1111か比較する
+		elsif now == "1111"
+			#occure_hashのkey1111のvalueに1足す
+			occur.store("1111", occur["1111"] + 1)
+			#pattern配列に1111を追加する
+			pattern.push("1111")
+			#変化した状況を更新する
+			prev = now
+	#回が継続していた場合 #nowが2111か比較する
+		elsif now == "2111"
+			#occure_hashのkey2111のvalueに1足す
+			occur.store("2111", occur["2111"] + 1)
+			#pattern配列に2111を追加する
+			pattern.push("2111")
+			#変化した状況を更新する
+			prev = now
 		end
 
 	end
