@@ -542,8 +542,8 @@ csv_data.each do |data|
 					#hash_scoreのkey2111のvalueに1足す
 					 score.store("2111", score["2111"] + 1)
 				end
-				#patternをリセットする
-				pattern = []
+				# #patternをリセットする
+				# pattern = []
 			end
 	#回が継続していた場合 #nowが0000か比較する
 		if now == "0000"
