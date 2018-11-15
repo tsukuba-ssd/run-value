@@ -10,7 +10,7 @@ occur = {"0000" => 0, "1000" => 0, "2000" => 0, "0001" => 0, "1001" => 0, "2001"
 
 pattern = []
 #pattern配列に0000を追加する
-pattern.push("0000")
+#pattern.push("0000")
 
 #状況が変化したかどうかの判断材料にするためnow,prevとし定義する
 now = "0000"
@@ -542,9 +542,11 @@ csv_data.each do |data|
 					#hash_scoreのkey2111のvalueに1足す
 					 score.store("2111", score["2111"] + 1)
 				end
-				# #patternをリセットする
-				# pattern = []
+				#patternをリセットする
+				pattern = []
 			end
+
+     p pattern
 	#回が継続していた場合 #nowが0000か比較する
 		if now == "0000"
 			#イニングが始まるのでランナー状況を0000に戻す
@@ -745,4 +747,4 @@ csv_data.each do |data|
 
 end
 
-p score
+p hash_score
