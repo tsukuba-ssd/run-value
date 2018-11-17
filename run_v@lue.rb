@@ -26,19 +26,19 @@ csv_data.each do |data|
 			out = 2
 	end
 
-	if data['一走状況'] == '0'
+	if data['一走打順'] == '0'
 		runners1 = 0
 	else
 		runners1 = 1
 	end
 
-	if data['二走状況'] == '0'
+	if data['二走打順'] == '0'
 		runners2 = 0
 	else
 		runners2 = 1
 	end
 
-	if data['三走状況'] == '0'
+	if data['三走打順'] == '0'
 		runners3 = 0
 	else
 		runners3 = 1

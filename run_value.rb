@@ -27,19 +27,19 @@ csv_data.each do |data|
 			out = 2
 	end
 
-	if data['一走状況'] == '0'
+	if data['一走打順'] == '0'
 		runners1 = 0
 	else
 		runners1 = 1
 	end
 
-	if data['二走状況'] == '0'
+	if data['二走打順'] == '0'
 		runners2 = 0
 	else
 		runners2 = 1
 	end
 
-	if data['三走状況'] == '0'
+	if data['三走打順'] == '0'
 		runners3 = 0
 	else
 		runners3 = 1
@@ -271,8 +271,11 @@ csv_data.each do |data|
 			if data["打者状況"] == "1"
 				x = x + 1
 			end
+			p now
+			p prev
 			#四球の得点価値を求める
 			y = ex[now] + x - ex[prev]
+
 			#イベント項目の四球の合計値に加える
 			total.store("四球", total["四球"] + y)
 			#イベントの項目に四球の回数を追加する
@@ -361,8 +364,8 @@ csv_data.each do |data|
 			prev = now
 		end
 end
- p total
- p ivent
+ # p total
+ # p ivent
 # p (total["単打"] / ivent["単打"].to_f).round(3)
 # p (total["二塁打"] / ivent["二塁打"].to_f).round(3)
 # p (total["三塁打"] / ivent["三塁打"].to_f).round(3)
