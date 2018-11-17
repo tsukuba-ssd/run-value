@@ -831,11 +831,35 @@ csv_data.each do |data|
 				pattern.push("2111")
 				#変化した状況を更新する
 				prev = now
-				end	
+				end
 			end
 
 		end
 
 end
-    p occur
-    p score
+
+p(score["0000"] / occur["0000"].to_f).round(3)
+
+p(score["1000"] / occur["1000"].to_f).round(3)
+ p(score["2000"] / occur["2000"].to_f).round(3)
+  p(score["0001"] / occur["0001"].to_f).round(3)
+	 p(score["1001"] / occur["1001"].to_f).round(3)
+	  p(score["2001"] / occur["2001"].to_f).round(3)
+		 p(score["0010"] / occur["0010"].to_f).round(3)
+		  p(score["1010"] / occur["1010"].to_f).round(3)
+			 p(score["2010"] / occur["2010"].to_f).round(3)
+			  p(score["0100"] / occur["0100"].to_f).round(3)
+				 p(score["1100"] / occur["1100"].to_f).round(3)
+				  p(score["2100"] / occur["2100"].to_f).round(3)
+					 p(score["0011"] / occur["0011"].to_f).round(3)
+					  p(score["1011"] / occur["1011"].to_f).round(3)
+						 p(score["2011"] / occur["2011"].to_f).round(3)
+						  p(score["0110"] / occur["0110"].to_f).round(3)
+							 p(score["1110"] / occur["1110"].to_f).round(3)
+							  p(score["2110"] / occur["2110"].to_f).round(3)
+								p(score["0101"] / occur["0101"].to_f).round(3)
+								p(score["1101"] / occur["1101"].to_f).round(3)
+							  p(score["2101"] / occur["2101"].to_f).round(3)
+								p(score["0111"] / occur["0111"].to_f).round(3)
+								p(score["1111"] / occur["1111"].to_f).round(3)
+								p(score["2111"] / occur["2111"].to_f).round(3) 
