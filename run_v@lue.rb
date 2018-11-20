@@ -837,7 +837,7 @@ csv_data.each do |data|
 		end
 
 end
-
+p occur
 puts((score["0000"] / occur["0000"].to_f).round(3))
 puts((score["1000"] / occur["1000"].to_f).round(3))
 puts((score["2000"] / occur["2000"].to_f).round(3))

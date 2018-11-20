@@ -4,7 +4,7 @@ require 'csv'
 csv_data = CSV.read('gamedata.run_value.csv', headers: true)
 
 #24パターンの得点期待値
-ex = {"0000" => 0.301, "1000" => 0.133, "2000" => 0.046, "0001" => 0.731, "1001" => 0.333, "2001" => 0.092, "0010" => 0.333, "1010" => 0.624, "2010" => 0.301, "0100" => 1.222, "1100" => 0.944, "2100" => 0.233, "0011" => 1.233, "1011" => 0.712, "2011" => 0.225, "0110" => 1.000, "1110" => 1.000, "2110" => 0.174, "0101" => 1.333, "1101" => 1.160, "2101" => 0.342, "0111" => 1.143, "1111" => 1.188, "2111" => 0.154 }
+ex = {"0000" => 0.310, "1000" => 0.164, "2000" => 0.062, "0001" => 0.579, "1001" => 0.337, "2001" => 0.149, "0010" => 0.804, "1010" => 0.532, "2010" => 0.276, "0100" => 1.179, "1100" => 0.821, "2100" => 0.349, "0011" => 1.322, "1011" => 0.772, "2011" => 0.258, "0110" => 1.095, "1110" => 1.133, "2110" => 0.509, "0101" => 1.227, "1101" => 0.919, "2101" => 0.430, "0111" => 1.625, "1111" => 1.352, "2111" => 0.612 }
 #各イベントの総数
 ivent = {"単打" => 0, "二塁打" => 0, "三塁打" => 0, "本塁打" => 0, "凡打死" => 0, "凡打出塁" => 0, "空振り三振" => 0, "見逃し三振" => 0, "三振" => 0, "四球" => 0, "死球" => 0, "犠打" => 0, "犠飛" => 0}
 #各イベントの合計値
@@ -454,18 +454,18 @@ csv_data.each do |data|
 		end
 
 end
-# p total
-# p ivent
- puts ((total["単打"] / ivent["単打"].to_f).round(3))
- puts ((total["二塁打"] / ivent["二塁打"].to_f).round(3))
- puts ((total["三塁打"] / ivent["三塁打"].to_f).round(3))
- puts ((total["本塁打"] / ivent["本塁打"].to_f).round(3))
- puts ((total["凡打死"] / ivent["凡打死"].to_f).round(3))
- puts ((total["凡打出塁"] / ivent["凡打出塁"].to_f).round(3))
- puts ((total["空振り三振"] / ivent["空振り三振"].to_f).round(3))
- puts ((total["見逃し三振"] / ivent["見逃し三振"].to_f).round(3))
- puts ((total["三振"] / ivent["三振"].to_f).round(3))
- puts ((total["四球"] / ivent["四球"].to_f).round(3))
- puts ((total["死球"] / ivent["死球"].to_f).round(3))
- puts ((total["犠打"] / ivent["犠打"].to_f).round(3))
- puts ((total["犠飛"] / ivent["犠飛"].to_f).round(3))
+ # p total
+ # p ivent
+  puts ((total["単打"] / ivent["単打"].to_f).round(3))
+  puts ((total["二塁打"] / ivent["二塁打"].to_f).round(3))
+  puts ((total["三塁打"] / ivent["三塁打"].to_f).round(3))
+  puts ((total["本塁打"] / ivent["本塁打"].to_f).round(3))
+  puts ((total["凡打死"] / ivent["凡打死"].to_f).round(3))
+  puts ((total["凡打出塁"] / ivent["凡打出塁"].to_f).round(3))
+  puts ((total["空振り三振"] / ivent["空振り三振"].to_f).round(3))
+  puts ((total["見逃し三振"] / ivent["見逃し三振"].to_f).round(3))
+  puts ((total["三振"] / ivent["三振"].to_f).round(3))
+  puts ((total["四球"] / ivent["四球"].to_f).round(3))
+  puts ((total["死球"] / ivent["死球"].to_f).round(3))
+  puts ((total["犠打"] / ivent["犠打"].to_f).round(3))
+  puts ((total["犠飛"] / ivent["犠飛"].to_f).round(3))
